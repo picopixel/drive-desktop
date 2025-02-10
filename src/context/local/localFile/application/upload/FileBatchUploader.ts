@@ -26,7 +26,7 @@ export class FileBatchUploader {
     signal: AbortSignal,
     updateProgress: () => void
   ): Promise<void> {
-    const MAX_CONCURRENT_TASKS = 5;
+    const MAX_CONCURRENT_TASKS = 100;
 
     const chunks = Array.from(
       { length: Math.ceil(batch.length / MAX_CONCURRENT_TASKS) },
